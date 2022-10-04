@@ -8,6 +8,7 @@ var next_direction = Vector2()
 
 func _ready():
 	next_direction = Vector2(1, 0)
+	next_direction = next_direction.normalized() * speed
 
 func _physics_process(delta):
 	get_input()
