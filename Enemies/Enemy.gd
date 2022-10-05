@@ -14,7 +14,7 @@ var random: RandomNumberGenerator
 func _init():
 	random = RandomNumberGenerator.new()
 
-func set_random_direction(before_direction: Vector2, speed: int) -> Vector2:
+func set_random_direction(speed: int) -> Vector2:
 	var next_direction = Vector2()
 	
 	var direction: int = random.randi_range(1, 4)
@@ -29,6 +29,20 @@ func set_random_direction(before_direction: Vector2, speed: int) -> Vector2:
 			next_direction.x -= 1
 	
 	return next_direction.normalized() * speed
+
+func is_opposite_direction(next_direction: Vector2, before_direction: Vector2) -> bool:
+	var is_opposite: bool = false
+	
+	if next_direction.y < -1 and before_direction.y > 1:
+		is_opposite = true
+	if next_direction.y > 1 and before_direction.y < -1:
+		is_opposite = true
+	if next_direction.x < -1 and before_direction.x > 1:
+		is_opposite = true
+	if next_direction.x > 1 and before_direction.x < -1:
+		is_opposite = true
+	
+	return is_opposite
 
 func set_animation_direction(direction: Vector2, animations: AnimatedSprite):
 	if direction.x > 1:

@@ -24,9 +24,10 @@ func _physics_process(delta):
 	
 	if direction.length() == 0:
 		before_direction = next_direction
-		next_direction = enemy.set_random_direction(before_direction, speed)
+		direction_enemy_is_opposite()
+
+func direction_enemy_is_opposite():
+	next_direction = enemy.set_random_direction(speed)
 	
-	var new_direction = random.randi_range(1, 100)
-	if new_direction < 2:
-		print(new_direction)
-		next_direction = enemy.set_random_direction(before_direction, speed)
+	if enemy.is_opposite_direction(next_direction, before_direction):
+		direction_enemy_is_opposite()
