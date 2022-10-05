@@ -17,6 +17,7 @@ func _init():
 func set_random_direction(speed: int) -> Vector2:
 	var next_direction = Vector2()
 	
+	random.randomize()
 	var direction: int = random.randi_range(1, 4)
 	match direction:
 		Direction.UP:
@@ -53,3 +54,16 @@ func set_animation_direction(direction: Vector2, animations: AnimatedSprite):
 		animations.play("Down")
 	if direction.y < -1:
 		animations.play("Up")
+
+func to_direction(direction: Vector2) -> String :
+	var direc: String = ""
+	if direction.x > 1:
+		direc = "Right"
+	if direction.x < -1:
+		direc = "Left"
+	if direction.y > 1:
+		direc = "Down"
+	if direction.y < -1:
+		direc = "Up"
+	
+	return direc
