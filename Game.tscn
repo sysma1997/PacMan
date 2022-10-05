@@ -10,4 +10,4 @@
 position = Vector2( 224, 376 )
 
 [node name="Blinky" parent="." index="2" instance=ExtResource( 3 )]
-position = Vector2( 536, 216 )
+position = Vector2( 224, 184 )
