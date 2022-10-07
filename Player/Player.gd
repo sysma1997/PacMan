@@ -51,3 +51,7 @@ func set_rotate(direction):
 		$Animations.rotation_degrees = 90
 	if direction.y < -1:
 		$Animations.rotation_degrees = -90
+
+
+func _on_ExitLeft_area_entered(area):
+	pass # Replace with function body.

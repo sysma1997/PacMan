@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Map/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Blinky.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/Clyde.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemies/Inky.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemies/Pinky.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" instance=ExtResource( 1 )]
 
@@ -11,3 +14,14 @@ position = Vector2( 224, 376 )
 
 [node name="Blinky" parent="." index="2" instance=ExtResource( 3 )]
 position = Vector2( 224, 184 )
+
+[node name="Clyde" parent="." index="3" instance=ExtResource( 4 )]
+position = Vector2( 256, 240 )
+
+[node name="Inky" parent="." index="4" instance=ExtResource( 5 )]
+position = Vector2( 192, 240 )
+
+[node name="Pinky" parent="." index="5" instance=ExtResource( 6 )]
+position = Vector2( 224, 224 )
+
+[connection signal="area_entered" from="ExitLeft" to="Player" method="_on_ExitLeft_area_entered"]
