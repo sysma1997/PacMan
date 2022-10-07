@@ -13,7 +13,7 @@ func _ready():
 func _physics_process(delta):
 	get_input()
 	direction = move_and_slide(next_direction * delta)
-	set_rotate(direction)
+	set_rotate()
 	
 	if direction.length() > 0:
 		before_direction = next_direction
@@ -42,7 +42,7 @@ func get_input():
 	
 	if next_direction.length() > 0:
 		next_direction = next_direction.normalized() * speed
-func set_rotate(direction):
+func set_rotate():
 	if direction.x > 1:
 		$Animations.rotation_degrees = 0
 	if direction.x < -1:
@@ -51,7 +51,3 @@ func set_rotate(direction):
 		$Animations.rotation_degrees = 90
 	if direction.y < -1:
 		$Animations.rotation_degrees = -90
-
-
-func _on_ExitLeft_area_entered(area):
-	pass # Replace with function body.
