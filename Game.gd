@@ -39,3 +39,10 @@ func _on_ExitRight_body_entered(body: Node):
 		return
 	
 	body.position = Vector2(15, 296)
+
+
+func _on_Player_dead():
+	$Blinky.visible = false
+	$Clyde.visible = false
+	$Inky.visible = false
+	$Pinky.visible = false
