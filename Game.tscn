@@ -15,16 +15,17 @@ script = ExtResource( 7 )
 position = Vector2( 224, 376 )
 
 [node name="Blinky" parent="." index="2" instance=ExtResource( 3 )]
-position = Vector2( 224, 184 )
+position = Vector2( 224, 248 )
 
 [node name="Clyde" parent="." index="3" instance=ExtResource( 4 )]
-position = Vector2( 256, 240 )
+position = Vector2( 256, 304 )
 
 [node name="Inky" parent="." index="4" instance=ExtResource( 5 )]
-position = Vector2( 192, 240 )
+position = Vector2( 192, 304 )
 
 [node name="Pinky" parent="." index="5" instance=ExtResource( 6 )]
-position = Vector2( 224, 224 )
+position = Vector2( 224, 288 )
 
+[connection signal="body_exited" from="AreaDor" to="." method="_on_AreaDor_body_exited"]
 [connection signal="body_entered" from="ExitLeft" to="." method="_on_ExitLeft_body_entered"]
 [connection signal="body_entered" from="ExitRight" to="." method="_on_ExitRight_body_entered"]

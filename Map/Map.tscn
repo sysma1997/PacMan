@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/Images/map.png" type="Texture" id=1]
 
@@ -235,24 +235,58 @@ points = PoolVector2Array( 312, 392, 312, 392, 328, 392, 328, 440, 408, 440, 408
 } ]
 0/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 48, 28 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 16, 4 )
+
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 24, 24 )
 
 [node name="Node2D" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 448.0
+margin_bottom = 616.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 format = 1
-tile_data = PoolIntArray( 0, 0, 0 )
+tile_data = PoolIntArray( 65536, 0, 0 )
+
+[node name="AreaDor" type="Area2D" parent="."]
+position = Vector2( 224, 296 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="AreaDor"]
+position = Vector2( 0, -4 )
+shape = SubResource( 27 )
+
+[node name="Dor" type="StaticBody2D" parent="AreaDor"]
+position = Vector2( 0, -32 )
+
+[node name="Collision" type="CollisionShape2D" parent="AreaDor/Dor"]
+position = Vector2( 0, 4 )
+shape = SubResource( 28 )
 
 [node name="ExitLeft" type="Area2D" parent="."]
+position = Vector2( -24, 296 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Collision" type="CollisionShape2D" parent="ExitLeft"]
-position = Vector2( -24, 232 )
 shape = SubResource( 26 )
 
 [node name="ExitRight" type="Area2D" parent="."]
+position = Vector2( 472, 296 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Collision" type="CollisionShape2D" parent="ExitRight"]
-position = Vector2( 472, 232 )
 shape = SubResource( 26 )
