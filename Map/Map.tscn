@@ -246,11 +246,6 @@ extents = Vector2( 24, 24 )
 
 [node name="Node2D" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 448.0
-margin_bottom = 616.0
-color = Color( 0, 0, 0, 1 )
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 format = 1

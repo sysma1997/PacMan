@@ -33,12 +33,11 @@ func _physics_process(delta):
 		$Animations.stop()
 
 func _on_AreaCollision_body_entered(body: Node):
-	if body.name == "Player" or body.name == "TileMap":
-		return
+	if body.name == "Blinky" or body.name == "Clyde" or body.name == "Inky" or body.name == "Pinky":
+		is_dead = true
+		emit_signal("dead")
+		$Animations.play("Dead")
 	
-	is_dead = true
-	emit_signal("dead")
-	$Animations.play("Dead")
 
 func get_input(): 
 	if Input.is_action_just_pressed("ui_up"):

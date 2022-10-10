@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Map/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -7,23 +7,775 @@
 [ext_resource path="res://Enemies/Inky.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/Pinky.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game.gd" type="Script" id=7]
+[ext_resource path="res://Dots/BigDot.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Dots/Dot.tscn" type="PackedScene" id=9]
 
 [node name="Game" instance=ExtResource( 1 )]
 script = ExtResource( 7 )
 
-[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
-position = Vector2( 224, 376 )
+[node name="Interface" type="Control" parent="." index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 
-[node name="Blinky" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Backgorund" type="ColorRect" parent="Interface" index="0"]
+margin_right = 448.0
+margin_bottom = 616.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Points" type="Label" parent="Interface" index="1"]
+margin_left = 48.0
+margin_top = 24.0
+margin_right = 192.0
+margin_bottom = 46.0
+text = "0"
+
+[node name="Dots" type="Node2D" parent="." index="2"]
+
+[node name="BigDot" parent="Dots" index="0" instance=ExtResource( 8 )]
+position = Vector2( 24, 120 )
+
+[node name="BigDot2" parent="Dots" index="1" instance=ExtResource( 8 )]
+position = Vector2( 424, 120 )
+
+[node name="BigDot3" parent="Dots" index="2" instance=ExtResource( 8 )]
+position = Vector2( 424, 440 )
+
+[node name="BigDot4" parent="Dots" index="3" instance=ExtResource( 8 )]
+position = Vector2( 24, 440 )
+
+[node name="Dot" parent="Dots" index="4" instance=ExtResource( 9 )]
+position = Vector2( 24, 88 )
+
+[node name="Dot13" parent="Dots" index="5" instance=ExtResource( 9 )]
+position = Vector2( 24, 104 )
+
+[node name="Dot14" parent="Dots" index="6" instance=ExtResource( 9 )]
+position = Vector2( 24, 136 )
+
+[node name="Dot15" parent="Dots" index="7" instance=ExtResource( 9 )]
+position = Vector2( 24, 152 )
+
+[node name="Dot16" parent="Dots" index="8" instance=ExtResource( 9 )]
+position = Vector2( 24, 168 )
+
+[node name="Dot17" parent="Dots" index="9" instance=ExtResource( 9 )]
+position = Vector2( 24, 184 )
+
+[node name="Dot18" parent="Dots" index="10" instance=ExtResource( 9 )]
+position = Vector2( 24, 200 )
+
+[node name="Dot19" parent="Dots" index="11" instance=ExtResource( 9 )]
+position = Vector2( 40, 200 )
+
+[node name="Dot20" parent="Dots" index="12" instance=ExtResource( 9 )]
+position = Vector2( 56, 200 )
+
+[node name="Dot21" parent="Dots" index="13" instance=ExtResource( 9 )]
+position = Vector2( 72, 200 )
+
+[node name="Dot22" parent="Dots" index="14" instance=ExtResource( 9 )]
+position = Vector2( 88, 200 )
+
+[node name="Dot23" parent="Dots" index="15" instance=ExtResource( 9 )]
+position = Vector2( 104, 200 )
+
+[node name="Dot99" parent="Dots" index="16" instance=ExtResource( 9 )]
+position = Vector2( 104, 216 )
+
+[node name="Dot100" parent="Dots" index="17" instance=ExtResource( 9 )]
+position = Vector2( 104, 232 )
+
+[node name="Dot101" parent="Dots" index="18" instance=ExtResource( 9 )]
+position = Vector2( 104, 248 )
+
+[node name="Dot102" parent="Dots" index="19" instance=ExtResource( 9 )]
+position = Vector2( 104, 264 )
+
+[node name="Dot103" parent="Dots" index="20" instance=ExtResource( 9 )]
+position = Vector2( 104, 280 )
+
+[node name="Dot104" parent="Dots" index="21" instance=ExtResource( 9 )]
+position = Vector2( 104, 296 )
+
+[node name="Dot105" parent="Dots" index="22" instance=ExtResource( 9 )]
+position = Vector2( 104, 312 )
+
+[node name="Dot106" parent="Dots" index="23" instance=ExtResource( 9 )]
+position = Vector2( 104, 328 )
+
+[node name="Dot107" parent="Dots" index="24" instance=ExtResource( 9 )]
+position = Vector2( 104, 344 )
+
+[node name="Dot108" parent="Dots" index="25" instance=ExtResource( 9 )]
+position = Vector2( 104, 360 )
+
+[node name="Dot109" parent="Dots" index="26" instance=ExtResource( 9 )]
+position = Vector2( 104, 376 )
+
+[node name="Dot110" parent="Dots" index="27" instance=ExtResource( 9 )]
+position = Vector2( 104, 392 )
+
+[node name="Dot134" parent="Dots" index="28" instance=ExtResource( 9 )]
+position = Vector2( 120, 392 )
+
+[node name="Dot135" parent="Dots" index="29" instance=ExtResource( 9 )]
+position = Vector2( 136, 392 )
+
+[node name="Dot136" parent="Dots" index="30" instance=ExtResource( 9 )]
+position = Vector2( 152, 392 )
+
+[node name="Dot137" parent="Dots" index="31" instance=ExtResource( 9 )]
+position = Vector2( 168, 392 )
+
+[node name="Dot138" parent="Dots" index="32" instance=ExtResource( 9 )]
+position = Vector2( 184, 392 )
+
+[node name="Dot139" parent="Dots" index="33" instance=ExtResource( 9 )]
+position = Vector2( 200, 392 )
+
+[node name="Dot140" parent="Dots" index="34" instance=ExtResource( 9 )]
+position = Vector2( 200, 408 )
+
+[node name="Dot141" parent="Dots" index="35" instance=ExtResource( 9 )]
+position = Vector2( 200, 424 )
+
+[node name="Dot142" parent="Dots" index="36" instance=ExtResource( 9 )]
+position = Vector2( 200, 440 )
+
+[node name="Dot143" parent="Dots" index="37" instance=ExtResource( 9 )]
+position = Vector2( 184, 440 )
+
+[node name="Dot144" parent="Dots" index="38" instance=ExtResource( 9 )]
+position = Vector2( 168, 440 )
+
+[node name="Dot145" parent="Dots" index="39" instance=ExtResource( 9 )]
+position = Vector2( 152, 440 )
+
+[node name="Dot159" parent="Dots" index="40" instance=ExtResource( 9 )]
+position = Vector2( 152, 456 )
+
+[node name="Dot160" parent="Dots" index="41" instance=ExtResource( 9 )]
+position = Vector2( 152, 472 )
+
+[node name="Dot161" parent="Dots" index="42" instance=ExtResource( 9 )]
+position = Vector2( 152, 488 )
+
+[node name="Dot162" parent="Dots" index="43" instance=ExtResource( 9 )]
+position = Vector2( 168, 488 )
+
+[node name="Dot163" parent="Dots" index="44" instance=ExtResource( 9 )]
+position = Vector2( 184, 488 )
+
+[node name="Dot164" parent="Dots" index="45" instance=ExtResource( 9 )]
+position = Vector2( 200, 488 )
+
+[node name="Dot165" parent="Dots" index="46" instance=ExtResource( 9 )]
+position = Vector2( 200, 504 )
+
+[node name="Dot166" parent="Dots" index="47" instance=ExtResource( 9 )]
+position = Vector2( 200, 520 )
+
+[node name="Dot167" parent="Dots" index="48" instance=ExtResource( 9 )]
+position = Vector2( 200, 536 )
+
+[node name="Dot168" parent="Dots" index="49" instance=ExtResource( 9 )]
+position = Vector2( 184, 536 )
+
+[node name="Dot169" parent="Dots" index="50" instance=ExtResource( 9 )]
+position = Vector2( 216, 536 )
+
+[node name="Dot170" parent="Dots" index="51" instance=ExtResource( 9 )]
+position = Vector2( 232, 536 )
+
+[node name="Dot171" parent="Dots" index="52" instance=ExtResource( 9 )]
+position = Vector2( 248, 536 )
+
+[node name="Dot172" parent="Dots" index="53" instance=ExtResource( 9 )]
+position = Vector2( 264, 536 )
+
+[node name="Dot173" parent="Dots" index="54" instance=ExtResource( 9 )]
+position = Vector2( 280, 536 )
+
+[node name="Dot174" parent="Dots" index="55" instance=ExtResource( 9 )]
+position = Vector2( 296, 536 )
+
+[node name="Dot175" parent="Dots" index="56" instance=ExtResource( 9 )]
+position = Vector2( 312, 536 )
+
+[node name="Dot176" parent="Dots" index="57" instance=ExtResource( 9 )]
+position = Vector2( 328, 536 )
+
+[node name="Dot177" parent="Dots" index="58" instance=ExtResource( 9 )]
+position = Vector2( 344, 536 )
+
+[node name="Dot178" parent="Dots" index="59" instance=ExtResource( 9 )]
+position = Vector2( 360, 536 )
+
+[node name="Dot179" parent="Dots" index="60" instance=ExtResource( 9 )]
+position = Vector2( 376, 536 )
+
+[node name="Dot180" parent="Dots" index="61" instance=ExtResource( 9 )]
+position = Vector2( 392, 536 )
+
+[node name="Dot181" parent="Dots" index="62" instance=ExtResource( 9 )]
+position = Vector2( 408, 536 )
+
+[node name="Dot182" parent="Dots" index="63" instance=ExtResource( 9 )]
+position = Vector2( 424, 536 )
+
+[node name="Dot183" parent="Dots" index="64" instance=ExtResource( 9 )]
+position = Vector2( 424, 520 )
+
+[node name="Dot184" parent="Dots" index="65" instance=ExtResource( 9 )]
+position = Vector2( 424, 504 )
+
+[node name="Dot185" parent="Dots" index="66" instance=ExtResource( 9 )]
+position = Vector2( 424, 488 )
+
+[node name="Dot186" parent="Dots" index="67" instance=ExtResource( 9 )]
+position = Vector2( 408, 488 )
+
+[node name="Dot187" parent="Dots" index="68" instance=ExtResource( 9 )]
+position = Vector2( 392, 488 )
+
+[node name="Dot208" parent="Dots" index="69" instance=ExtResource( 9 )]
+position = Vector2( 392, 472 )
+
+[node name="Dot209" parent="Dots" index="70" instance=ExtResource( 9 )]
+position = Vector2( 392, 456 )
+
+[node name="Dot210" parent="Dots" index="71" instance=ExtResource( 9 )]
+position = Vector2( 392, 440 )
+
+[node name="Dot211" parent="Dots" index="72" instance=ExtResource( 9 )]
+position = Vector2( 408, 440 )
+
+[node name="Dot212" parent="Dots" index="73" instance=ExtResource( 9 )]
+position = Vector2( 424, 424 )
+
+[node name="Dot213" parent="Dots" index="74" instance=ExtResource( 9 )]
+position = Vector2( 424, 408 )
+
+[node name="Dot214" parent="Dots" index="75" instance=ExtResource( 9 )]
+position = Vector2( 424, 392 )
+
+[node name="Dot215" parent="Dots" index="76" instance=ExtResource( 9 )]
+position = Vector2( 408, 392 )
+
+[node name="Dot216" parent="Dots" index="77" instance=ExtResource( 9 )]
+position = Vector2( 392, 392 )
+
+[node name="Dot217" parent="Dots" index="78" instance=ExtResource( 9 )]
+position = Vector2( 376, 392 )
+
+[node name="Dot218" parent="Dots" index="79" instance=ExtResource( 9 )]
+position = Vector2( 360, 392 )
+
+[node name="Dot219" parent="Dots" index="80" instance=ExtResource( 9 )]
+position = Vector2( 344, 392 )
+
+[node name="Dot230" parent="Dots" index="81" instance=ExtResource( 9 )]
+position = Vector2( 344, 376 )
+
+[node name="Dot231" parent="Dots" index="82" instance=ExtResource( 9 )]
+position = Vector2( 344, 360 )
+
+[node name="Dot232" parent="Dots" index="83" instance=ExtResource( 9 )]
+position = Vector2( 344, 344 )
+
+[node name="Dot233" parent="Dots" index="84" instance=ExtResource( 9 )]
+position = Vector2( 344, 328 )
+
+[node name="Dot234" parent="Dots" index="85" instance=ExtResource( 9 )]
+position = Vector2( 344, 312 )
+
+[node name="Dot235" parent="Dots" index="86" instance=ExtResource( 9 )]
+position = Vector2( 344, 296 )
+
+[node name="Dot236" parent="Dots" index="87" instance=ExtResource( 9 )]
+position = Vector2( 344, 280 )
+
+[node name="Dot237" parent="Dots" index="88" instance=ExtResource( 9 )]
+position = Vector2( 344, 264 )
+
+[node name="Dot238" parent="Dots" index="89" instance=ExtResource( 9 )]
+position = Vector2( 344, 248 )
+
+[node name="Dot239" parent="Dots" index="90" instance=ExtResource( 9 )]
+position = Vector2( 344, 232 )
+
+[node name="Dot240" parent="Dots" index="91" instance=ExtResource( 9 )]
+position = Vector2( 344, 216 )
+
+[node name="Dot222" parent="Dots" index="92" instance=ExtResource( 9 )]
+position = Vector2( 328, 392 )
+
+[node name="Dot223" parent="Dots" index="93" instance=ExtResource( 9 )]
+position = Vector2( 312, 392 )
+
+[node name="Dot224" parent="Dots" index="94" instance=ExtResource( 9 )]
+position = Vector2( 296, 392 )
+
+[node name="Dot225" parent="Dots" index="95" instance=ExtResource( 9 )]
+position = Vector2( 280, 392 )
+
+[node name="Dot226" parent="Dots" index="96" instance=ExtResource( 9 )]
+position = Vector2( 264, 392 )
+
+[node name="Dot227" parent="Dots" index="97" instance=ExtResource( 9 )]
+position = Vector2( 248, 392 )
+
+[node name="Dot228" parent="Dots" index="98" instance=ExtResource( 9 )]
+position = Vector2( 248, 408 )
+
+[node name="Dot229" parent="Dots" index="99" instance=ExtResource( 9 )]
+position = Vector2( 248, 424 )
+
+[node name="Dot220" parent="Dots" index="100" instance=ExtResource( 9 )]
+position = Vector2( 344, 408 )
+
+[node name="Dot221" parent="Dots" index="101" instance=ExtResource( 9 )]
+position = Vector2( 344, 424 )
+
+[node name="Dot188" parent="Dots" index="102" instance=ExtResource( 9 )]
+position = Vector2( 376, 488 )
+
+[node name="Dot189" parent="Dots" index="103" instance=ExtResource( 9 )]
+position = Vector2( 360, 488 )
+
+[node name="Dot190" parent="Dots" index="104" instance=ExtResource( 9 )]
+position = Vector2( 344, 488 )
+
+[node name="Dot191" parent="Dots" index="105" instance=ExtResource( 9 )]
+position = Vector2( 344, 472 )
+
+[node name="Dot192" parent="Dots" index="106" instance=ExtResource( 9 )]
+position = Vector2( 344, 456 )
+
+[node name="Dot193" parent="Dots" index="107" instance=ExtResource( 9 )]
+position = Vector2( 344, 440 )
+
+[node name="Dot194" parent="Dots" index="108" instance=ExtResource( 9 )]
+position = Vector2( 328, 440 )
+
+[node name="Dot195" parent="Dots" index="109" instance=ExtResource( 9 )]
+position = Vector2( 312, 440 )
+
+[node name="Dot196" parent="Dots" index="110" instance=ExtResource( 9 )]
+position = Vector2( 296, 440 )
+
+[node name="Dot200" parent="Dots" index="111" instance=ExtResource( 9 )]
+position = Vector2( 296, 456 )
+
+[node name="Dot201" parent="Dots" index="112" instance=ExtResource( 9 )]
+position = Vector2( 296, 472 )
+
+[node name="Dot202" parent="Dots" index="113" instance=ExtResource( 9 )]
+position = Vector2( 296, 488 )
+
+[node name="Dot203" parent="Dots" index="114" instance=ExtResource( 9 )]
+position = Vector2( 280, 488 )
+
+[node name="Dot204" parent="Dots" index="115" instance=ExtResource( 9 )]
+position = Vector2( 264, 488 )
+
+[node name="Dot205" parent="Dots" index="116" instance=ExtResource( 9 )]
+position = Vector2( 248, 488 )
+
+[node name="Dot206" parent="Dots" index="117" instance=ExtResource( 9 )]
+position = Vector2( 248, 504 )
+
+[node name="Dot207" parent="Dots" index="118" instance=ExtResource( 9 )]
+position = Vector2( 248, 520 )
+
+[node name="Dot197" parent="Dots" index="119" instance=ExtResource( 9 )]
+position = Vector2( 280, 440 )
+
+[node name="Dot198" parent="Dots" index="120" instance=ExtResource( 9 )]
+position = Vector2( 264, 440 )
+
+[node name="Dot199" parent="Dots" index="121" instance=ExtResource( 9 )]
+position = Vector2( 248, 440 )
+
+[node name="Dot146" parent="Dots" index="122" instance=ExtResource( 9 )]
+position = Vector2( 136, 440 )
+
+[node name="Dot111" parent="Dots" index="123" instance=ExtResource( 9 )]
+position = Vector2( 88, 392 )
+
+[node name="Dot112" parent="Dots" index="124" instance=ExtResource( 9 )]
+position = Vector2( 72, 392 )
+
+[node name="Dot113" parent="Dots" index="125" instance=ExtResource( 9 )]
+position = Vector2( 56, 392 )
+
+[node name="Dot114" parent="Dots" index="126" instance=ExtResource( 9 )]
+position = Vector2( 40, 392 )
+
+[node name="Dot115" parent="Dots" index="127" instance=ExtResource( 9 )]
+position = Vector2( 24, 392 )
+
+[node name="Dot116" parent="Dots" index="128" instance=ExtResource( 9 )]
+position = Vector2( 24, 408 )
+
+[node name="Dot117" parent="Dots" index="129" instance=ExtResource( 9 )]
+position = Vector2( 24, 424 )
+
+[node name="Dot118" parent="Dots" index="130" instance=ExtResource( 9 )]
+position = Vector2( 40, 440 )
+
+[node name="Dot119" parent="Dots" index="131" instance=ExtResource( 9 )]
+position = Vector2( 56, 440 )
+
+[node name="Dot120" parent="Dots" index="132" instance=ExtResource( 9 )]
+position = Vector2( 56, 456 )
+
+[node name="Dot121" parent="Dots" index="133" instance=ExtResource( 9 )]
+position = Vector2( 56, 472 )
+
+[node name="Dot122" parent="Dots" index="134" instance=ExtResource( 9 )]
+position = Vector2( 56, 488 )
+
+[node name="Dot123" parent="Dots" index="135" instance=ExtResource( 9 )]
+position = Vector2( 40, 488 )
+
+[node name="Dot124" parent="Dots" index="136" instance=ExtResource( 9 )]
+position = Vector2( 24, 488 )
+
+[node name="Dot147" parent="Dots" index="137" instance=ExtResource( 9 )]
+position = Vector2( 24, 504 )
+
+[node name="Dot148" parent="Dots" index="138" instance=ExtResource( 9 )]
+position = Vector2( 24, 520 )
+
+[node name="Dot149" parent="Dots" index="139" instance=ExtResource( 9 )]
+position = Vector2( 24, 536 )
+
+[node name="Dot150" parent="Dots" index="140" instance=ExtResource( 9 )]
+position = Vector2( 40, 536 )
+
+[node name="Dot151" parent="Dots" index="141" instance=ExtResource( 9 )]
+position = Vector2( 56, 536 )
+
+[node name="Dot152" parent="Dots" index="142" instance=ExtResource( 9 )]
+position = Vector2( 72, 536 )
+
+[node name="Dot153" parent="Dots" index="143" instance=ExtResource( 9 )]
+position = Vector2( 88, 536 )
+
+[node name="Dot154" parent="Dots" index="144" instance=ExtResource( 9 )]
+position = Vector2( 104, 536 )
+
+[node name="Dot155" parent="Dots" index="145" instance=ExtResource( 9 )]
+position = Vector2( 120, 536 )
+
+[node name="Dot156" parent="Dots" index="146" instance=ExtResource( 9 )]
+position = Vector2( 136, 536 )
+
+[node name="Dot157" parent="Dots" index="147" instance=ExtResource( 9 )]
+position = Vector2( 152, 536 )
+
+[node name="Dot158" parent="Dots" index="148" instance=ExtResource( 9 )]
+position = Vector2( 168, 536 )
+
+[node name="Dot125" parent="Dots" index="149" instance=ExtResource( 9 )]
+position = Vector2( 72, 488 )
+
+[node name="Dot126" parent="Dots" index="150" instance=ExtResource( 9 )]
+position = Vector2( 88, 488 )
+
+[node name="Dot127" parent="Dots" index="151" instance=ExtResource( 9 )]
+position = Vector2( 104, 488 )
+
+[node name="Dot128" parent="Dots" index="152" instance=ExtResource( 9 )]
+position = Vector2( 104, 472 )
+
+[node name="Dot129" parent="Dots" index="153" instance=ExtResource( 9 )]
+position = Vector2( 104, 456 )
+
+[node name="Dot130" parent="Dots" index="154" instance=ExtResource( 9 )]
+position = Vector2( 104, 440 )
+
+[node name="Dot131" parent="Dots" index="155" instance=ExtResource( 9 )]
+position = Vector2( 104, 424 )
+
+[node name="Dot132" parent="Dots" index="156" instance=ExtResource( 9 )]
+position = Vector2( 104, 408 )
+
+[node name="Dot133" parent="Dots" index="157" instance=ExtResource( 9 )]
+position = Vector2( 120, 440 )
+
+[node name="Dot24" parent="Dots" index="158" instance=ExtResource( 9 )]
+position = Vector2( 104, 184 )
+
+[node name="Dot25" parent="Dots" index="159" instance=ExtResource( 9 )]
+position = Vector2( 104, 168 )
+
+[node name="Dot26" parent="Dots" index="160" instance=ExtResource( 9 )]
+position = Vector2( 104, 152 )
+
+[node name="Dot34" parent="Dots" index="161" instance=ExtResource( 9 )]
+position = Vector2( 120, 152 )
+
+[node name="Dot35" parent="Dots" index="162" instance=ExtResource( 9 )]
+position = Vector2( 136, 152 )
+
+[node name="Dot36" parent="Dots" index="163" instance=ExtResource( 9 )]
+position = Vector2( 152, 152 )
+
+[node name="Dot43" parent="Dots" index="164" instance=ExtResource( 9 )]
+position = Vector2( 152, 168 )
+
+[node name="Dot44" parent="Dots" index="165" instance=ExtResource( 9 )]
+position = Vector2( 152, 184 )
+
+[node name="Dot45" parent="Dots" index="166" instance=ExtResource( 9 )]
+position = Vector2( 152, 200 )
+
+[node name="Dot46" parent="Dots" index="167" instance=ExtResource( 9 )]
+position = Vector2( 168, 200 )
+
+[node name="Dot47" parent="Dots" index="168" instance=ExtResource( 9 )]
+position = Vector2( 184, 200 )
+
+[node name="Dot48" parent="Dots" index="169" instance=ExtResource( 9 )]
+position = Vector2( 200, 200 )
+
+[node name="Dot37" parent="Dots" index="170" instance=ExtResource( 9 )]
+position = Vector2( 168, 152 )
+
+[node name="Dot38" parent="Dots" index="171" instance=ExtResource( 9 )]
+position = Vector2( 184, 152 )
+
+[node name="Dot39" parent="Dots" index="172" instance=ExtResource( 9 )]
+position = Vector2( 200, 152 )
+
+[node name="Dot49" parent="Dots" index="173" instance=ExtResource( 9 )]
+position = Vector2( 216, 152 )
+
+[node name="Dot50" parent="Dots" index="174" instance=ExtResource( 9 )]
+position = Vector2( 232, 152 )
+
+[node name="Dot51" parent="Dots" index="175" instance=ExtResource( 9 )]
+position = Vector2( 248, 152 )
+
+[node name="Dot52" parent="Dots" index="176" instance=ExtResource( 9 )]
+position = Vector2( 248, 136 )
+
+[node name="Dot53" parent="Dots" index="177" instance=ExtResource( 9 )]
+position = Vector2( 248, 120 )
+
+[node name="Dot54" parent="Dots" index="178" instance=ExtResource( 9 )]
+position = Vector2( 248, 104 )
+
+[node name="Dot55" parent="Dots" index="179" instance=ExtResource( 9 )]
+position = Vector2( 248, 88 )
+
+[node name="Dot56" parent="Dots" index="180" instance=ExtResource( 9 )]
+position = Vector2( 264, 88 )
+
+[node name="Dot57" parent="Dots" index="181" instance=ExtResource( 9 )]
+position = Vector2( 280, 88 )
+
+[node name="Dot58" parent="Dots" index="182" instance=ExtResource( 9 )]
+position = Vector2( 296, 88 )
+
+[node name="Dot59" parent="Dots" index="183" instance=ExtResource( 9 )]
+position = Vector2( 312, 88 )
+
+[node name="Dot60" parent="Dots" index="184" instance=ExtResource( 9 )]
+position = Vector2( 328, 88 )
+
+[node name="Dot61" parent="Dots" index="185" instance=ExtResource( 9 )]
+position = Vector2( 344, 88 )
+
+[node name="Dot62" parent="Dots" index="186" instance=ExtResource( 9 )]
+position = Vector2( 360, 88 )
+
+[node name="Dot63" parent="Dots" index="187" instance=ExtResource( 9 )]
+position = Vector2( 376, 88 )
+
+[node name="Dot64" parent="Dots" index="188" instance=ExtResource( 9 )]
+position = Vector2( 392, 88 )
+
+[node name="Dot65" parent="Dots" index="189" instance=ExtResource( 9 )]
+position = Vector2( 408, 88 )
+
+[node name="Dot66" parent="Dots" index="190" instance=ExtResource( 9 )]
+position = Vector2( 424, 88 )
+
+[node name="Dot67" parent="Dots" index="191" instance=ExtResource( 9 )]
+position = Vector2( 424, 104 )
+
+[node name="Dot68" parent="Dots" index="192" instance=ExtResource( 9 )]
+position = Vector2( 424, 136 )
+
+[node name="Dot69" parent="Dots" index="193" instance=ExtResource( 9 )]
+position = Vector2( 424, 152 )
+
+[node name="Dot70" parent="Dots" index="194" instance=ExtResource( 9 )]
+position = Vector2( 424, 168 )
+
+[node name="Dot71" parent="Dots" index="195" instance=ExtResource( 9 )]
+position = Vector2( 424, 184 )
+
+[node name="Dot72" parent="Dots" index="196" instance=ExtResource( 9 )]
+position = Vector2( 424, 200 )
+
+[node name="Dot73" parent="Dots" index="197" instance=ExtResource( 9 )]
+position = Vector2( 408, 200 )
+
+[node name="Dot74" parent="Dots" index="198" instance=ExtResource( 9 )]
+position = Vector2( 392, 200 )
+
+[node name="Dot75" parent="Dots" index="199" instance=ExtResource( 9 )]
+position = Vector2( 376, 200 )
+
+[node name="Dot76" parent="Dots" index="200" instance=ExtResource( 9 )]
+position = Vector2( 360, 200 )
+
+[node name="Dot77" parent="Dots" index="201" instance=ExtResource( 9 )]
+position = Vector2( 344, 200 )
+
+[node name="Dot78" parent="Dots" index="202" instance=ExtResource( 9 )]
+position = Vector2( 344, 184 )
+
+[node name="Dot79" parent="Dots" index="203" instance=ExtResource( 9 )]
+position = Vector2( 344, 168 )
+
+[node name="Dot80" parent="Dots" index="204" instance=ExtResource( 9 )]
+position = Vector2( 344, 152 )
+
+[node name="Dot88" parent="Dots" index="205" instance=ExtResource( 9 )]
+position = Vector2( 328, 152 )
+
+[node name="Dot89" parent="Dots" index="206" instance=ExtResource( 9 )]
+position = Vector2( 312, 152 )
+
+[node name="Dot90" parent="Dots" index="207" instance=ExtResource( 9 )]
+position = Vector2( 296, 152 )
+
+[node name="Dot93" parent="Dots" index="208" instance=ExtResource( 9 )]
+position = Vector2( 296, 168 )
+
+[node name="Dot94" parent="Dots" index="209" instance=ExtResource( 9 )]
+position = Vector2( 296, 184 )
+
+[node name="Dot95" parent="Dots" index="210" instance=ExtResource( 9 )]
+position = Vector2( 296, 200 )
+
+[node name="Dot96" parent="Dots" index="211" instance=ExtResource( 9 )]
+position = Vector2( 280, 200 )
+
+[node name="Dot97" parent="Dots" index="212" instance=ExtResource( 9 )]
+position = Vector2( 264, 200 )
+
+[node name="Dot98" parent="Dots" index="213" instance=ExtResource( 9 )]
+position = Vector2( 248, 200 )
+
+[node name="Dot91" parent="Dots" index="214" instance=ExtResource( 9 )]
+position = Vector2( 280, 152 )
+
+[node name="Dot92" parent="Dots" index="215" instance=ExtResource( 9 )]
+position = Vector2( 264, 152 )
+
+[node name="Dot84" parent="Dots" index="216" instance=ExtResource( 9 )]
+position = Vector2( 360, 152 )
+
+[node name="Dot85" parent="Dots" index="217" instance=ExtResource( 9 )]
+position = Vector2( 376, 152 )
+
+[node name="Dot86" parent="Dots" index="218" instance=ExtResource( 9 )]
+position = Vector2( 392, 152 )
+
+[node name="Dot87" parent="Dots" index="219" instance=ExtResource( 9 )]
+position = Vector2( 408, 152 )
+
+[node name="Dot81" parent="Dots" index="220" instance=ExtResource( 9 )]
+position = Vector2( 344, 136 )
+
+[node name="Dot82" parent="Dots" index="221" instance=ExtResource( 9 )]
+position = Vector2( 344, 120 )
+
+[node name="Dot83" parent="Dots" index="222" instance=ExtResource( 9 )]
+position = Vector2( 344, 104 )
+
+[node name="Dot40" parent="Dots" index="223" instance=ExtResource( 9 )]
+position = Vector2( 200, 136 )
+
+[node name="Dot41" parent="Dots" index="224" instance=ExtResource( 9 )]
+position = Vector2( 200, 120 )
+
+[node name="Dot42" parent="Dots" index="225" instance=ExtResource( 9 )]
+position = Vector2( 200, 104 )
+
+[node name="Dot30" parent="Dots" index="226" instance=ExtResource( 9 )]
+position = Vector2( 88, 152 )
+
+[node name="Dot31" parent="Dots" index="227" instance=ExtResource( 9 )]
+position = Vector2( 72, 152 )
+
+[node name="Dot32" parent="Dots" index="228" instance=ExtResource( 9 )]
+position = Vector2( 56, 152 )
+
+[node name="Dot33" parent="Dots" index="229" instance=ExtResource( 9 )]
+position = Vector2( 40, 152 )
+
+[node name="Dot27" parent="Dots" index="230" instance=ExtResource( 9 )]
+position = Vector2( 104, 136 )
+
+[node name="Dot28" parent="Dots" index="231" instance=ExtResource( 9 )]
+position = Vector2( 104, 120 )
+
+[node name="Dot29" parent="Dots" index="232" instance=ExtResource( 9 )]
+position = Vector2( 104, 104 )
+
+[node name="Dot2" parent="Dots" index="233" instance=ExtResource( 9 )]
+position = Vector2( 40, 88 )
+
+[node name="Dot3" parent="Dots" index="234" instance=ExtResource( 9 )]
+position = Vector2( 56, 88 )
+
+[node name="Dot4" parent="Dots" index="235" instance=ExtResource( 9 )]
+position = Vector2( 72, 88 )
+
+[node name="Dot5" parent="Dots" index="236" instance=ExtResource( 9 )]
+position = Vector2( 88, 88 )
+
+[node name="Dot6" parent="Dots" index="237" instance=ExtResource( 9 )]
+position = Vector2( 104, 88 )
+
+[node name="Dot7" parent="Dots" index="238" instance=ExtResource( 9 )]
+position = Vector2( 120, 88 )
+
+[node name="Dot8" parent="Dots" index="239" instance=ExtResource( 9 )]
+position = Vector2( 136, 88 )
+
+[node name="Dot9" parent="Dots" index="240" instance=ExtResource( 9 )]
+position = Vector2( 152, 88 )
+
+[node name="Dot10" parent="Dots" index="241" instance=ExtResource( 9 )]
+position = Vector2( 168, 88 )
+
+[node name="Dot11" parent="Dots" index="242" instance=ExtResource( 9 )]
+position = Vector2( 184, 88 )
+
+[node name="Dot12" parent="Dots" index="243" instance=ExtResource( 9 )]
+position = Vector2( 200, 88 )
+
+[node name="Player" parent="." index="3" instance=ExtResource( 2 )]
+position = Vector2( 224, 440 )
+
+[node name="Blinky" parent="." index="4" instance=ExtResource( 3 )]
 position = Vector2( 224, 248 )
 
-[node name="Clyde" parent="." index="3" instance=ExtResource( 4 )]
+[node name="Clyde" parent="." index="5" instance=ExtResource( 4 )]
 position = Vector2( 256, 304 )
 
-[node name="Inky" parent="." index="4" instance=ExtResource( 5 )]
+[node name="Inky" parent="." index="6" instance=ExtResource( 5 )]
 position = Vector2( 192, 304 )
 
-[node name="Pinky" parent="." index="5" instance=ExtResource( 6 )]
+[node name="Pinky" parent="." index="7" instance=ExtResource( 6 )]
 position = Vector2( 224, 288 )
 
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
