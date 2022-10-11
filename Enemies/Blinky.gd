@@ -16,6 +16,8 @@ func _ready():
 	
 	next_direction = Vector2(-1, 0)
 	next_direction = next_direction.normalized() * speed
+	
+	Global.connect("Weaken_ghosts", self, "_on_Weaken_ghosts")
 
 func _physics_process(delta):
 	direction = move_and_slide(next_direction * delta)
@@ -34,3 +36,6 @@ func _physics_process(delta):
 func change_direction():
 	before_direction = next_direction
 	next_direction = enemy.set_random_direction(speed, before_direction)
+
+func _on_Weaken_ghosts():
+	speed = 5000
