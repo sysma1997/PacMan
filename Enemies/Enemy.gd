@@ -8,7 +8,7 @@ var random: RandomNumberGenerator
 func _init():
 	random = RandomNumberGenerator.new()
 
-func set_random_direction(speed: int, before_direction: Vector2) -> Vector2:
+func set_random_direction(before_direction: Vector2) -> Vector2:
 	var next_direction = Vector2()
 	
 	random.randomize()
@@ -25,9 +25,17 @@ func set_random_direction(speed: int, before_direction: Vector2) -> Vector2:
 		else:
 			next_direction.x += 1
 	
-	return next_direction.normalized() * speed
+	return next_direction
 
-func set_animation_direction(direction: Vector2, animations: AnimatedSprite):
+func set_animation_direction(direction: Vector2, animations: AnimatedSprite, is_weak: bool, is_recuperation: bool):
+	if is_weak:
+		if is_recuperation:
+			animations.play("Recuperation")
+			return
+		
+		animations.play("Weak")
+		return
+		
 	if direction.x > 1:
 		animations.play("Right")
 	if direction.x < -1:

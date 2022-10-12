@@ -34,6 +34,7 @@ func _physics_process(delta):
 
 func _on_AreaCollision_body_entered(body: Node):
 	if body.name == "Blinky" or body.name == "Clyde" or body.name == "Inky" or body.name == "Pinky":
+		print(body.is_weak)
 		is_dead = true
 		emit_signal("dead")
 		$Animations.play("Dead")
