@@ -34,7 +34,11 @@ func _physics_process(delta):
 
 func _on_AreaCollision_body_entered(body: Node):
 	if body.name == "Blinky" or body.name == "Clyde" or body.name == "Inky" or body.name == "Pinky":
+		if body.is_dead:
+			return
+		
 		if body.is_weak:
+			Global.set_dead_ghost(body.name)
 			return
 		
 		is_dead = true

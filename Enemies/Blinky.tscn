@@ -136,7 +136,7 @@ script = ExtResource( 2 )
 
 [node name="Animations" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
-animation = "UpEyes"
+animation = "Down"
 playing = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]

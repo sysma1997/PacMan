@@ -32,6 +32,7 @@ Global="*res://Global.gd"
 
 window/size/width=448
 window/size/height=616
+window/size/resizable=false
 
 [gui]
 
