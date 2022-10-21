@@ -11,10 +11,13 @@ var ghosts_out: int = 1
 var reset_game: bool = false
 var seconds_reset: float = 0
 
+var dead_ghost_weak: int = 0
+
 func _ready():
 	$AreaDor/Dor/Collision.set_deferred("disabled", true)
 	
 	Global.connect("Points", self, "_on_Points")
+	Global.connect("Weaken_ghosts", self, "_on_Weaken_ghosts")
 	Global.connect("Dead_ghost", self, "_on_Dead_ghost")
 
 func _process(delta):
@@ -73,8 +76,22 @@ func _on_Points(value: int):
 	points += value
 	$Interface/Points.text = String(points)
 
+func _on_Weaken_ghosts():
+	dead_ghost_weak = 0
+
 func _on_Dead_ghost(name: String):
 	$AreaDor/Dor/Collision.set_deferred("disabled", true)
+	
+	if dead_ghost_weak == 0:
+		points += 200
+	elif dead_ghost_weak == 1:
+		points += 400
+	elif dead_ghost_weak == 2:
+		points += 800
+	elif dead_ghost_weak == 3:
+		points += 1600
+	dead_ghost_weak += 1
+	$Interface/Points.text = String(points)
 	
 	if name == "Blinky":
 		ghosts_out -= 1
