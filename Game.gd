@@ -12,6 +12,7 @@ var reset_game: bool = false
 var seconds_reset: float = 0
 
 var dead_ghost_weak: int = 0
+var seconds_point: float = 0
 
 func _ready():
 	$AreaDor/Dor/Collision.set_deferred("disabled", true)
@@ -21,6 +22,12 @@ func _ready():
 	Global.connect("Dead_ghost", self, "_on_Dead_ghost")
 
 func _process(delta):
+	if $Points.visible:
+		seconds_point += delta
+		if seconds_point > 2:
+			seconds_point = 0
+			$Points.set_deferred("visible", false)
+	
 	if !reset_game:
 		return
 	
@@ -79,29 +86,40 @@ func _on_Points(value: int):
 func _on_Weaken_ghosts():
 	dead_ghost_weak = 0
 
+func show_points(value: int, position: Vector2):
+	$Points.play(String(value))
+	$Points.position = position
+	$Points.set_deferred("visible", true)
 func _on_Dead_ghost(name: String):
 	$AreaDor/Dor/Collision.set_deferred("disabled", true)
 	
+	var point = 0
 	if dead_ghost_weak == 0:
-		points += 200
+		point = 200
 	elif dead_ghost_weak == 1:
-		points += 400
+		point = 400
 	elif dead_ghost_weak == 2:
-		points += 800
+		point = 800
 	elif dead_ghost_weak == 3:
-		points += 1600
+		point = 1600
+	
+	points += point
 	dead_ghost_weak += 1
 	$Interface/Points.text = String(points)
 	
 	if name == "Blinky":
 		ghosts_out -= 1
 		blinky_out = false
+		show_points(point, $Blinky.position)
 	elif name == "Clyde":
 		ghosts_out -= 1
 		clyde_out = false
+		show_points(point, $Clyde.position)
 	elif name == "Inky":
 		ghosts_out -= 1
 		inky_out = false
+		show_points(point, $Inky.position)
 	elif name == "Pinky":
 		ghosts_out -= 1
 		pinky_out = false
+		show_points(point, $Pinky.position)

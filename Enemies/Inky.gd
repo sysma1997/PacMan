@@ -74,6 +74,7 @@ func _on_Weaken_ghosts():
 	if is_dead:
 		return
 	
+	seconds_weak = 0
 	speed = 5000
 	is_weak = true
 
