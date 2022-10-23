@@ -17,6 +17,8 @@ var is_recuperation: bool = false
 var is_dead: bool = false
 var is_no_move: int = 0
 
+var game_start: bool = false
+
 func _ready():
 	enemy = Enemy.new()
 	
@@ -24,8 +26,12 @@ func _ready():
 	
 	Global.connect("Weaken_ghosts", self, "_on_Weaken_ghosts")
 	Global.connect("Dead_ghost", self, "_on_Dead_ghost")
+	Global.connect("Game_start", self, "_on_Game_start")
 
 func _physics_process(delta):
+	if !game_start:
+		return
+	
 	next_direction = next_direction.normalized() * speed
 	direction = move_and_slide(next_direction * delta)
 	if direction.length() == 0:
@@ -69,6 +75,9 @@ func change_direction(is_random: bool = false):
 		
 		is_dead = false
 		next_direction = Vector2(0, -1)
+
+func _on_Game_start():
+	game_start = true
 
 func _on_Weaken_ghosts():
 	if is_dead:

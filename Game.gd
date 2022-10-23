@@ -14,6 +14,9 @@ var seconds_reset: float = 0
 var dead_ghost_weak: int = 0
 var seconds_point: float = 0
 
+var game_start: bool = false
+var player_win: bool = false
+
 func _ready():
 	$AreaDor/Dor/Collision.set_deferred("disabled", true)
 	
@@ -24,8 +27,13 @@ func _ready():
 	$AudioGameStart.play()
 
 func _process(delta):
-	if $AudioGameStart.playing:
-		pass
+	if player_win:
+		if Input.is_action_pressed("ui_select"):
+			get_tree().reload_current_scene()
+	
+	if !$AudioGameStart.playing and !game_start:
+		game_start = true
+		Global.set_game_start()
 	
 	if $Points.visible:
 		seconds_point += delta
@@ -77,22 +85,29 @@ func _on_ExitRight_body_entered(body: Node):
 	body.position = Vector2(15, 296)
 
 func _on_Player_dead():
-	$Blinky.visible = false
-	$Clyde.visible = false
-	$Inky.visible = false
-	$Pinky.visible = false
+	$Blinky.queue_free()
+	$Clyde.queue_free()
+	$Inky.queue_free()
+	$Pinky.queue_free()
 	
 	reset_game = true
+	
+	$DeadPlayer.play()
 
 func _on_Points(value: int):
 	points += value
 	$Interface/Points.text = String(points)
 	
-	if $Dots.get_children().size() == 1:
-		$Blinky.visible = false
-		$Clyde.visible = false
-		$Inky.visible = false
-		$Pinky.visible = false
+	var dots = $Dots.get_children().size()
+	if dots  <= 1:
+		$Player.queue_free()
+		$Blinky.queue_free()
+		$Clyde.queue_free()
+		$Inky.queue_free()
+		$Pinky.queue_free()
+		
+		$Interface/Win.set_deferred("visible", true)
+		player_win = true
 
 func _on_Weaken_ghosts():
 	dead_ghost_weak = 0
