@@ -12,8 +12,13 @@ var is_dead: bool = false
 func _ready():
 	next_direction = Vector2(1, 0)
 	next_direction = next_direction.normalized() * speed
+	
+	Global.connect("Points", self, "_on_Points")
 
 func _physics_process(delta):
+	if !$Run.playing:
+		$Run.play()
+	
 	if is_dead:
 		return
 	
@@ -44,7 +49,6 @@ func _on_AreaCollision_body_entered(body: Node):
 		is_dead = true
 		emit_signal("dead")
 		$Animations.play("Dead")
-	
 
 func get_input(): 
 	if Input.is_action_just_pressed("ui_up"):
@@ -71,3 +75,8 @@ func set_rotate():
 		$Animations.rotation_degrees = 90
 	if direction.y < -1:
 		$Animations.rotation_degrees = -90
+
+func _on_Points(point: int):
+	if !$EatDot.playing:
+		$EatDot.play()
+	

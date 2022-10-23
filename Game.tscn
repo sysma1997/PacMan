@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Map/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Dots/Dot.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Fonts/ConnectionII.otf" type="DynamicFontData" id=10]
 [ext_resource path="res://Assets/Images/sprites.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sounds/game_start.wav" type="AudioStream" id=12]
 
 [sub_resource type="DynamicFont" id=2]
 size = 26
@@ -55,6 +56,11 @@ animations = [ {
 "frames": [  ],
 "loop": true,
 "name": "800",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "New Anim",
 "speed": 5.0
 } ]
 
@@ -845,7 +851,10 @@ position = Vector2( 224, 288 )
 [node name="Points" type="AnimatedSprite" parent="." index="11"]
 visible = false
 frames = SubResource( 7 )
-animation = "200"
+animation = "New Anim"
+
+[node name="AudioGameStart" type="AudioStreamPlayer" parent="." index="12"]
+stream = ExtResource( 12 )
 
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
 [connection signal="body_exited" from="AreaDor" to="." method="_on_AreaDor_body_exited"]

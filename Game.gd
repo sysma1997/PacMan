@@ -20,8 +20,13 @@ func _ready():
 	Global.connect("Points", self, "_on_Points")
 	Global.connect("Weaken_ghosts", self, "_on_Weaken_ghosts")
 	Global.connect("Dead_ghost", self, "_on_Dead_ghost")
+	
+	$AudioGameStart.play()
 
 func _process(delta):
+	if $AudioGameStart.playing:
+		pass
+	
 	if $Points.visible:
 		seconds_point += delta
 		if seconds_point > 2:
@@ -82,6 +87,12 @@ func _on_Player_dead():
 func _on_Points(value: int):
 	points += value
 	$Interface/Points.text = String(points)
+	
+	if $Dots.get_children().size() == 1:
+		$Blinky.visible = false
+		$Clyde.visible = false
+		$Inky.visible = false
+		$Pinky.visible = false
 
 func _on_Weaken_ghosts():
 	dead_ghost_weak = 0
