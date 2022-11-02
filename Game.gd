@@ -113,6 +113,7 @@ func _on_Weaken_ghosts():
 	dead_ghost_weak = 0
 
 func show_points(value: int, position: Vector2):
+	seconds_point = 0
 	$Points.play(String(value))
 	$Points.position = position
 	$Points.set_deferred("visible", true)
