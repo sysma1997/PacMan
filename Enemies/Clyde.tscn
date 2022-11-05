@@ -132,6 +132,7 @@ animations = [ {
 extents = Vector2( 15, 15 )
 
 [node name="Clyde" type="KinematicBody2D"]
+collision_layer = 4
 script = ExtResource( 1 )
 
 [node name="Animations" type="AnimatedSprite" parent="."]

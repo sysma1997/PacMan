@@ -75,6 +75,7 @@ func change_direction(is_random: bool = false):
 		
 		is_dead = false
 		next_direction = Vector2(0, -1)
+		set_collision_mask_bit(0, true)
 
 func _on_Game_start():
 	game_start = true
@@ -89,6 +90,7 @@ func _on_Weaken_ghosts():
 
 func _on_Dead_ghost(name: String):
 	if name == "Blinky":
+		set_collision_mask_bit(0, false)
 		is_dead = true
 		speed = 12000
 		

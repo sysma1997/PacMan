@@ -132,11 +132,13 @@ animations = [ {
 extents = Vector2( 15, 15 )
 
 [node name="Blinky" type="KinematicBody2D"]
+collision_layer = 4
 script = ExtResource( 2 )
 
 [node name="Animations" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
 animation = "Down"
+frame = 1
 playing = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]

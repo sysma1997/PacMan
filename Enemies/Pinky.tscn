@@ -132,6 +132,8 @@ animations = [ {
 extents = Vector2( 15, 15 )
 
 [node name="Pinky" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 5
 script = ExtResource( 2 )
 
 [node name="Animations" type="AnimatedSprite" parent="."]

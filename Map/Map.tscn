@@ -248,11 +248,15 @@ extents = Vector2( 24, 24 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
+collision_layer = 4
+collision_mask = 4
 format = 1
 tile_data = PoolIntArray( 65536, 0, 0 )
 
 [node name="AreaDor" type="Area2D" parent="."]
 position = Vector2( 224, 296 )
+collision_layer = 4
+collision_mask = 4
 __meta__ = {
 "_edit_group_": true
 }
@@ -270,6 +274,8 @@ shape = SubResource( 28 )
 
 [node name="ExitLeft" type="Area2D" parent="."]
 position = Vector2( -24, 296 )
+collision_layer = 4
+collision_mask = 4
 __meta__ = {
 "_edit_group_": true
 }
@@ -279,6 +285,8 @@ shape = SubResource( 26 )
 
 [node name="ExitRight" type="Area2D" parent="."]
 position = Vector2( 472, 296 )
+collision_layer = 4
+collision_mask = 4
 __meta__ = {
 "_edit_group_": true
 }
